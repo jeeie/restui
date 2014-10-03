@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="RestUI.Content.UserCaseExecutionPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:content="clr-namespace:RestUI.Content"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" MinWidth="200"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="titleBlock" Text="Content" Grid.Row="0" Style="{StaticResource Heading2}" Grid.ColumnSpan="3"/>
+        <content:ExecutionStepList x:Name="executionStepList"  Grid.Row="1" Margin="{StaticResource SplitLeft}" ActionSelected="executionStepList_ActionSelected"/>
+        <GridSplitter Grid.Row="1" Grid.Column="1"/>
+        <!--content:Sample Grid.Column="2" Margin="{StaticResource SplitRight}" /-->
+        <content:ExecutionResult x:Name="executionResult" Grid.Row="1" Grid.Column="2" Margin="{StaticResource SplitRight}" />
+
+    </Grid>
+</UserControl>

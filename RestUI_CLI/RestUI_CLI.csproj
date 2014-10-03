@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0308CD72-B576-41AB-8121-63351767CA6E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestUI_CLI</RootNamespace>
+    <AssemblyName>RestUI_CLI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Photonware.RestUI.Actions.NET4\Photonware.RestUI.Actions.NET4.csproj">
+      <Project>{e4a62c8a-7103-4290-989d-e5ec2eb742ea}</Project>
+      <Name>Photonware.RestUI.Actions.NET4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Actions\Photonware.RestUI.Actions.csproj">
+      <Project>{12882628-1adc-429f-ae99-6912ee80b874}</Project>
+      <Name>Photonware.RestUI.Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.CommonApi\Photonware.RestUI.CommonApi.csproj">
+      <Project>{04177037-befd-4246-bd4c-fe3a101da669}</Project>
+      <Name>Photonware.RestUI.CommonApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Core\Photonware.RestUI.Core.csproj">
+      <Project>{f62bb4a0-e290-4d0c-a364-1a20591ae50e}</Project>
+      <Name>Photonware.RestUI.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Scripts.Javascript\Photonware.RestUI.Scripts.Javascript.csproj">
+      <Project>{535bed5c-52ae-43bf-a6c6-531cd308ef38}</Project>
+      <Name>Photonware.RestUI.Scripts.Javascript</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Scripts.Python\Photonware.RestUI.Scripts.Python.csproj">
+      <Project>{6223f435-53e7-4187-83cf-b3ddcf584b16}</Project>
+      <Name>Photonware.RestUI.Scripts.Python</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Utils\Photonware.RestUI.Utils.csproj">
+      <Project>{275b1846-f6d8-4dda-91e0-5ca9705ae5fe}</Project>
+      <Name>Photonware.RestUI.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

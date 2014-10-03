@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="RestUI.Content.ActionTreeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:converters="clr-namespace:RestUI.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" MinWidth="150">
+    <UserControl.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Steps" Grid.Row="0" Grid.ColumnSpan="5" Style="{StaticResource Heading2}"/>
+        <mui:ModernButton Click="Add_Button_Click" Grid.Row="1" EllipseDiameter="28"  IconHeight="20" IconWidth="20"  IconData="F1 M 53.2929,21.2929L 54.7071,22.7071C 56.4645,24.4645 56.4645,27.3137 54.7071,29.0711L 52.2323,31.5459L 44.4541,23.7677L 46.9289,21.2929C 48.6863,19.5355 51.5355,19.5355 53.2929,21.2929 Z M 31.7262,52.052L 23.948,44.2738L 43.0399,25.182L 50.818,32.9601L 31.7262,52.052 Z M 23.2409,47.1023L 28.8977,52.7591L 21.0463,54.9537L 23.2409,47.1023 Z M 17,28L 17,23L 23,23L 23,17L 28,17L 28,23L 34,23L 34,28L 28,28L 28,34L 23,34L 23,28L 17,28 Z "/>
+        <mui:ModernButton Click="Delete_Button_Click" x:Name="deleteButton" IsEnabled="False" Grid.Row="1" Grid.Column="1" EllipseDiameter="28" IconHeight="20" IconWidth="20" IconData="F1 M 53.2929,21.2929L 54.7071,22.7071C 56.4645,24.4645 56.4645,27.3137 54.7071,29.0711L 52.2323,31.5459L 44.4541,23.7677L 46.9289,21.2929C 48.6863,19.5355 51.5355,19.5355 53.2929,21.2929 Z M 31.7262,52.052L 23.948,44.2738L 43.0399,25.182L 50.818,32.9601L 31.7262,52.052 Z M 23.2409,47.1023L 28.8977,52.7591L 21.0463,54.9537L 23.2409,47.1023 Z M 17,28L 17,23L 34,23L 34,28L 17,28 Z "/>
+        <mui:ModernButton Click="Duplicate_Button_Click" ToolTip="Duplicate" x:Name="duplicateButton" IsEnabled="False" Grid.Row="1" Grid.Column="2" EllipseDiameter="28" IconHeight="20" IconWidth="20" IconData="F1 M 21.3,17L 46.7,17C 47.418,17 48,17.5821 48,18.3L 48,24.7C 48,25.418 47.418,26 46.7,26L 31.3,26C 30.0298,26 29,27.0298 29,28.3L 29,49.7C 29,50.418 28.418,51 27.7,51L 21.3,51C 20.582,51 20,50.418 20,49.7L 20,18.3C 20,17.582 20.582,17 21.3,17 Z M 33.3,29L 54.7,29C 55.418,29 56,29.582 56,30.3L 56,57.7C 56,58.418 55.418,59 54.7,59L 33.3,59C 32.582,59 32,58.418 32,57.7L 32,30.3C 32,29.582 32.582,29 33.3,29 Z "/>
+        <mui:ModernButton Click="Up_Button_Click" x:Name="upButton" IsEnabled="False" Grid.Row="1" Grid.Column="3" EllipseDiameter="28"  IconHeight="20" IconWidth="20"  IconData="F1 M 34,57L 42,57L 42,32.25L 52,42.25L 52,31.75L 38,17.75L 24,31.75L 24,42.25L 34,32.25L 34,57 Z "/>
+        <mui:ModernButton Click="Down_Button_Click" x:Name="downButton" IsEnabled="False" Grid.Row="1" Grid.Column="4" EllipseDiameter="28" IconHeight="20" IconWidth="20" IconData="F1 M 42,19.0002L 34,19.0002L 34,43.7502L 24,33.7502L 24,44.2502L 38,58.2502L 52,44.2502L 52,33.7502L 42,43.7502L 42,19.0002 Z "/>
+        <!--Button Content="Add" Width="80" Grid.Row="1" Grid.Column="0" Click="Add_Button_Click" Margin="2"/-->
+        <!--Button Name="deleteButton" Content="Delete" Width="80" Grid.Row="1" Grid.Column="1" Click="Delete_Button_Click" HorizontalAlignment="Left" Margin="2" IsEnabled="False"/-->
+        <TreeView Grid.Row="2" Grid.ColumnSpan="5" Name="listBox" Margin="10">
+            <TreeView.ItemTemplate>
+                <DataTemplate x:Name="DataTemplateItem">
+                    <StackPanel >
+                        <!--Image Source="{Binding ??}" Height="32" Width="32" Canvas.Left="8" Canvas.Top="8"/-->
+                        <TextBlock Text="{Binding Text}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <!--TextBlock Text="Enabled" FontSize="10" Padding="2" Visibility="{Binding IsEnabled, Converter={StaticResource BoolConverter}}"/-->
+                            <TextBlock Text="Disabled" FontSize="10" Padding="2" Visibility="{Binding IsDisabled, Converter={StaticResource BoolConverter}}"/>
+                            <TextBlock Text="Tentative" FontSize="10" Padding="2" Visibility="{Binding IsTentative, Converter={StaticResource BoolConverter}}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+
+
+    </Grid>
+</UserControl>

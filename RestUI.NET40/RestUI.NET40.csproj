@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18165DB0-EC54-4789-8909-F785E11C3665}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestUI</RootNamespace>
+    <AssemblyName>RestUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI, Version=1.0.5.0, Culture=neutral, PublicKeyToken=2d21ec3cd074c59a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ModernUI.WPF.1.0.6\lib\net40\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>..\packages\AvalonEdit.4.4.2.9744\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ModernUI.WPF.1.0.6\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\3pp\renci.sshnet libs\NET4.0\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="zxing">
+      <HintPath>..\3pp\zxing.net4\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\3pp\zxing.net4\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\RestUI.NET45\Content\About.xaml.cs">
+      <Link>Content\About.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\ActionList.xaml.cs">
+      <Link>Content\ActionList.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\ActionTreeView.xaml.cs">
+      <Link>Content\ActionTreeView.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\ContentBox.xaml.cs">
+      <Link>Content\ContentBox.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\ExecutionResult.xaml.cs">
+      <Link>Content\ExecutionResult.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\ExecutionStepList.xaml.cs">
+      <Link>Content\ExecutionStepList.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\InputContent.xaml.cs">
+      <Link>Content\InputContent.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\MainSplit.xaml.cs">
+      <Link>Content\MainSplit.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\QRCodePage.xaml.cs">
+      <Link>Content\QRCodePage.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\Sample.xaml.cs">
+      <Link>Content\Sample.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\SettingsAppearance.xaml.cs">
+      <Link>Content\SettingsAppearance.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\SettingsAppearanceViewModel.cs">
+      <Link>Content\SettingsAppearanceViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\UserCaseExecutionPage.xaml.cs">
+      <Link>Content\UserCaseExecutionPage.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Content\UserCaseList.xaml.cs">
+      <Link>Content\UserCaseList.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Converters\BoolToColorConverter.cs">
+      <Link>Converters\BoolToColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Converters\BoolToVisibilityConverter.cs">
+      <Link>Converters\BoolToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\MainWindow.xaml.cs">
+      <Link>MainWindow.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Pages\Home.xaml.cs">
+      <Link>Pages\Home.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Pages\LayoutSplit.xaml.cs">
+      <Link>Pages\LayoutSplit.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Pages\Settings.xaml.cs">
+      <Link>Pages\Settings.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Utils\FileUtils.cs">
+      <Link>Utils\FileUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Utils\SimpleHttpServer.cs">
+      <Link>Utils\SimpleHttpServer.cs</Link>
+    </Compile>
+    <Compile Include="..\RestUI.NET45\Utils\SshTunnelManager.cs">
+      <Link>Utils\SshTunnelManager.cs</Link>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\RestUI.NET45\Assets\HelloKitty.xaml">
+      <Link>Assets\HelloKitty.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\About.xaml">
+      <Link>Content\About.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\ActionList.xaml">
+      <Link>Content\ActionList.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\ActionTreeView.xaml">
+      <Link>Content\ActionTreeView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\ContentBox.xaml">
+      <Link>Content\ContentBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\ExecutionResult.xaml">
+      <Link>Content\ExecutionResult.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\ExecutionStepList.xaml">
+      <Link>Content\ExecutionStepList.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\InputContent.xaml">
+      <Link>Content\InputContent.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\MainSplit.xaml">
+      <Link>Content\MainSplit.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\QRCodePage.xaml">
+      <Link>Content\QRCodePage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\Sample.xaml">
+      <Link>Content\Sample.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\SettingsAppearance.xaml">
+      <Link>Content\SettingsAppearance.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\UserCaseExecutionPage.xaml">
+      <Link>Content\UserCaseExecutionPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Content\UserCaseList.xaml">
+      <Link>Content\UserCaseList.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\MainWindow.xaml">
+      <Link>MainWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Pages\Home.xaml">
+      <Link>Pages\Home.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Pages\LayoutSplit.xaml">
+      <Link>Pages\LayoutSplit.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\RestUI.NET45\Pages\Settings.xaml">
+      <Link>Pages\Settings.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\RestUI.NET45\Assets\background.kitty.png">
+      <Link>Assets\background.kitty.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Photonware.RestUI.Actions.NET4\Photonware.RestUI.Actions.NET4.csproj">
+      <Project>{e4a62c8a-7103-4290-989d-e5ec2eb742ea}</Project>
+      <Name>Photonware.RestUI.Actions.NET4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Actions\Photonware.RestUI.Actions.csproj">
+      <Project>{12882628-1adc-429f-ae99-6912ee80b874}</Project>
+      <Name>Photonware.RestUI.Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.CommonApi\Photonware.RestUI.CommonApi.csproj">
+      <Project>{04177037-befd-4246-bd4c-fe3a101da669}</Project>
+      <Name>Photonware.RestUI.CommonApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Core\Photonware.RestUI.Core.csproj">
+      <Project>{f62bb4a0-e290-4d0c-a364-1a20591ae50e}</Project>
+      <Name>Photonware.RestUI.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Scripts.Javascript\Photonware.RestUI.Scripts.Javascript.csproj">
+      <Project>{535bed5c-52ae-43bf-a6c6-531cd308ef38}</Project>
+      <Name>Photonware.RestUI.Scripts.Javascript</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Scripts.Python\Photonware.RestUI.Scripts.Python.csproj">
+      <Project>{6223f435-53e7-4187-83cf-b3ddcf584b16}</Project>
+      <Name>Photonware.RestUI.Scripts.Python</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Photonware.RestUI.Utils\Photonware.RestUI.Utils.csproj">
+      <Project>{275b1846-f6d8-4dda-91e0-5ca9705ae5fe}</Project>
+      <Name>Photonware.RestUI.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

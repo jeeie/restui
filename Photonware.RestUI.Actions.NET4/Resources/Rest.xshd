@@ -1,0 +1,33 @@
+<SyntaxDefinition name="REST" extensions=".rest" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <Color name="Comment" foreground="Gray" exampleText="/* comment */" />
+  <Color name="String" foreground="Green" exampleText="body { background: url(&quot;image.png&quot;) }" />
+  <Color name="Selector" foreground="DarkBlue" fontWeight="bold" exampleText="div p" />
+  <Color name="Class" foreground="#FF8B008B" exampleText="#para" />
+  <Color name="Property" foreground="Red" exampleText="p { color: red; }" />
+  <Color name="Value" foreground="Blue" exampleText="p { color: red; }" />
+  <Color name="CurlyBraces" foreground="Black" exampleText="{ }" />
+  <Color name="Colon" foreground="Black" exampleText=":" />
+  <Color name="HtmlTag" foreground="MidnightBlue" exampleText="&lt;html&gt;Hello World!/html&gt;" />
+  <Color name="PythonTag" foreground="Red" exampleText="{{ py || i+1 }}" />
+  
+  <RuleSet ignoreCase="true">
+    <Span color="Comment" multiline="true">
+      <Begin><![CDATA[<!--]]></Begin>
+      <End><![CDATA[-->]]></End>
+    </Span>
+    <Rule color="Class">
+      &lt;&lt;[^&lt;]*?&gt;&gt;
+    </Rule>
+    <Rule color="HtmlTag">
+      &lt;[^&lt;&gt;]*?&gt;
+    </Rule>
+    <Span color="PythonTag" multiline="true">
+      <Begin>{{</Begin>
+      <End>}}</End>
+    </Span>
+    <!--Rule color="Comment">
+      [\s\t]*?\#.*
+    </Rule-->
+  </RuleSet>
+
+</SyntaxDefinition>

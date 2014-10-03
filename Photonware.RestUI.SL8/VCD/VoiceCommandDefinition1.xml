@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+  <!-- The CommandSet Name is used to programmatically access the CommandSet -->
+  <CommandSet xml:lang="zh-CN" Name="chineseCommands">
+    <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
+    <CommandPrefix> 微软 文档 </CommandPrefix>
+    <!-- The CommandSet Example appears in the global help alongside your app name -->
+    <Example> 搜索 构造 函数 </Example>
+
+    <Command Name="MSDNSearch">
+      <!-- The Command example appears in the drill-down help page for your app -->
+      <Example> 搜索 构造 函数' </Example>
+
+      <!-- ListenFor elements provide ways to say the command, including references to 
+            {PhraseLists} and {PhraseTopics} as well as [optional] words -->
+      <ListenFor> 查找 {dictatedSearchTerms} </ListenFor>
+      <ListenFor> 搜 {dictatedSearchTerms} </ListenFor>
+      <ListenFor> 搜索  {dictatedSearchTerms} </ListenFor>
+      <ListenFor> 查 {dictatedSearchTerms} </ListenFor>
+      <ListenFor> 找 {dictatedSearchTerms} </ListenFor>
+
+      <!--Feedback provides the displayed and spoken text when your command is triggered -->
+      <Feedback> 查找 MSDN... </Feedback>
+
+      <!-- Navigate specifies the desired page or invocation destination for the Command-->
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <Command Name="MSDNNaturalLanguage">
+      <Example> 我 想 去 Windows 手机 开发 中心 </Example>
+      <ListenFor> {naturalLanguage} </ListenFor>
+      <Feedback> 启动 MSDN... </Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <PhraseTopic Label="dictatedSearchTerms" Scenario="Search">
+      <Subject> MSDN </Subject>
+    </PhraseTopic>
+
+    <PhraseTopic Label="naturalLanguage" Scenario="Natural Language">
+      <Subject> MSDN </Subject>
+    </PhraseTopic>
+
+  </CommandSet>
+</VoiceCommands>
