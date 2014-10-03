@@ -115,7 +115,7 @@ namespace RestUI.Content
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Url = urlComboBox.SelectedValue as string;
-            Dispatcher.Invoke(() =>
+            Dispatcher.Invoke((Action)delegate
             {
                 this.GenerateQRCode();
             });
