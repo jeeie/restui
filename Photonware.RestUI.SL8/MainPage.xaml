@@ -127,7 +127,7 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton x:Name="newButton" IconUri="/Assets/outline.squares.png" Text="scan barcode" Click="newButton_Click"/>
-            <shell:ApplicationBarIconButton x:Name="urlButton" IconUri="/Assets/linkto.png" Text="url"/>
+            <!--shell:ApplicationBarIconButton x:Name="urlButton" IconUri="/Assets/linkto.png" Text="url"/-->
             <shell:ApplicationBarIconButton x:Name="refreshButton" IconUri="/Assets/Refresh.png" Text="refresh"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="settingsButton" Text="settings" Click="settingsButton_Click" />

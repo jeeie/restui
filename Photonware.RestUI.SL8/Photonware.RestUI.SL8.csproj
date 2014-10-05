@@ -15,8 +15,7 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
-    </SupportedCultures>
+    <SupportedCultures>en</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>Photonware.RestUI.SL8_Release_AnyCPU.xap</XapFilename>
@@ -190,6 +189,7 @@
     <Content Include="Assets\linkto.png" />
     <Content Include="Assets\outline.squares.png" />
     <Content Include="Assets\Refresh.png" />
+    <Content Include="Assets\restui_512x512.png" />
     <Content Include="Assets\Save.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -218,6 +218,7 @@
     <Content Include="VoiceCommandDefinition1.xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.en.resx" />
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
@@ -253,8 +254,8 @@
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="zxing.wp7.1">
-      <HintPath>..\3pp\zxing.wp7\zxing.wp7.1.dll</HintPath>
+    <Reference Include="zxing.wp8.0">
+      <HintPath>..\..\..\RestUI\3pp\zxing.wp8\zxing.wp8.0.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

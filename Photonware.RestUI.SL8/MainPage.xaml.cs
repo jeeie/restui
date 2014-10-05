@@ -111,7 +111,15 @@ namespace Photonware.RestUI.SL8
             }
         }
 
-
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+            var result = MessageBox.Show("Quit RestUI?", "Quit", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
 
         private void newButton_Click(object sender, EventArgs e)
         {
