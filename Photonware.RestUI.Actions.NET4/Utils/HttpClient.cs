@@ -188,6 +188,9 @@ namespace Photonware.RestUI.Actions.NET4.Utils
                                 case ("accept"):
                                     hwr.Accept = token[1].Trim();
                                     break;
+                                case ("referer"):
+                                    hwr.Referer = token[1].Trim();
+                                    break;
                                 default:
                                     hwr.Headers[token[0].Trim()] = token[1].Trim();
                                     break;
@@ -417,7 +420,7 @@ namespace Photonware.RestUI.Actions.NET4.Utils
                 }
                 catch
                 {
-                    if (this.StatusCode == 200)
+                    if (this.StatusCode >= 200 && this.StatusCode <= 299)
                     {
                         return success;
                     }
