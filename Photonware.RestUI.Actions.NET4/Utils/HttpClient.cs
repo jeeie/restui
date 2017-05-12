@@ -139,6 +139,8 @@ namespace Photonware.RestUI.Actions.NET4.Utils
                             hwr.ReadWriteTimeout = this.Timeout;
                             hwr.ProtocolVersion = new Version(Convert.ToInt32(m.Groups[3].Value), Convert.ToInt32(m.Groups[4].Value));
                             this.RequestHeader += line + "\r\n";
+                            hwr.AllowAutoRedirect = false;
+                            hwr.ServicePoint.Expect100Continue = false;
                         }
                         else
                         {
@@ -211,8 +213,6 @@ namespace Photonware.RestUI.Actions.NET4.Utils
             {
                 try
                 {
-
-
                     if (!string.IsNullOrEmpty(content))
                     {
                         byte[] buf = Encoding.UTF8.GetBytes(content);
