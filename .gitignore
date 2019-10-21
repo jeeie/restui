@@ -9,6 +9,7 @@ bin/
 obj/
 Debug/
 Release/
+.vs/
 *.opensdf
 *.tlog
 *.log

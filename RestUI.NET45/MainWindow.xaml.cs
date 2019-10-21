@@ -1,22 +1,10 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
 using Photonware.RestUI.Core;
-using Photonware.RestUI.Actions;
-using Photonware.RestUI.Actions.NET4;
-using Photonware.RestUI.Utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RestUI
 {
@@ -44,7 +32,10 @@ namespace RestUI
                 Properties.Settings.Default.SshPassword
                 );
             RestUI.Utils.SshTunnelManager.Instance.IsEnabled = Properties.Settings.Default.EnableSshTunnel;
-            System.Net.ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback
+
+            // Enable Tls12, due to the following code is unavaible in .net4.0: "System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;"
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback
             (
                delegate { return true; }
             );
